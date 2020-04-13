@@ -1,4 +1,4 @@
-package com.portafolio.util.Entities;
+package com.portafolio.util.entities;
 
 import java.io.Serializable;
 import java.util.Date;
