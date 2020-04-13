@@ -32,7 +32,7 @@ public class LoginUtil {
 		return mapResponse;
 	}
 
-	private static Map<String, String> getCredentialsOfHeader(HttpHeaders httpHeaders) {
+	public static Map<String, String> getCredentialsOfHeader(HttpHeaders httpHeaders) {
 		
 		Map<String, String> headerMap = httpHeaders.toSingleValueMap();
 
