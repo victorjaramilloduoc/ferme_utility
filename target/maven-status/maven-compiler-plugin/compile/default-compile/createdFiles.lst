@@ -1,0 +1,6 @@
+com/portafolio/util/rest/client/RestClientUtil.class
+com/portafolio/util/Entities/UserEntity.class
+com/portafolio/util/Entities/CityEntity.class
+com/portafolio/util/Entities/RegionEntity.class
+com/portafolio/util/exceptions/RestClientUtilException.class
+com/portafolio/util/Entities/LocationEntity.class
