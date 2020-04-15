@@ -23,7 +23,6 @@ public class RegionEntity implements Serializable {
 	
 	@Id
 	@Column(name="ID_REGIÓN") 
-	@JsonIgnore
 	private Long id;
 	
 	@Column(name="REGION")

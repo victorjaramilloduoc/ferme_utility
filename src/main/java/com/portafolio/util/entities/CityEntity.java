@@ -24,7 +24,6 @@ public class CityEntity implements Serializable {
 	
 	@Id
 	@Column(name="ID_CIUDAD")
-	@JsonIgnore
 	private Long id;
 	
 	@Column(name="CIUDAD")
