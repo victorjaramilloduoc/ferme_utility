@@ -41,8 +41,8 @@ public class UserEntity implements Serializable {
 	@Column(name="APELLIDO")
 	private String lastName;
 	
-	@Column(name ="NOMBRE_USUARIO")
-	private String userName;
+	@Column(name ="CORREO_ELECTRONICO")
+	private String email;
 
 	@Column(name="RUT_USUARIO")
 	private Long rut;

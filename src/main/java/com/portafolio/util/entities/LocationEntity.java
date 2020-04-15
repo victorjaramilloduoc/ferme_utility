@@ -24,7 +24,6 @@ public class LocationEntity implements Serializable {
 	
 	@Id
 	@Column(name="ID_COMUNA")
-	@JsonIgnore
 	private Long id;
 	
 	@Column(name="COMUNA")
