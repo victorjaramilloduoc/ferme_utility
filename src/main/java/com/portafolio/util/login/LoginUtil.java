@@ -35,9 +35,8 @@ public class LoginUtil {
 	public static Map<String, String> getCredentialsOfHeader(HttpHeaders httpHeaders) {
 		
 		Map<String, String> headerMap = httpHeaders.toSingleValueMap();
-
-		String auth = headerMap.get("authorization").toString().replace("Basic", "").trim();
-
+		String auth = headerMap.get(HttpHeaders.AUTHORIZATION.toLowerCase()).toString().replace("Basic", "").trim();
+		
 		String authorization = new String(Base64.getDecoder().decode(auth));
 
 		String[] credencials = authorization.split(":");

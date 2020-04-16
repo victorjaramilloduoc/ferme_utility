@@ -33,7 +33,8 @@ public class RestClientUtil {
 	 * @return JSONObject
 	 */
 	public static JSONObject getJsonFromWs(String wsUri, Map<String, String> uriPathParams,
-			Map<String, String> queryParams, String token, Map<String, Integer> properties) {
+			Map<String, String> queryParams, String token, Map<String, Integer> properties,
+			String basic) {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(wsUri);
 
@@ -54,7 +55,12 @@ public class RestClientUtil {
 		// Add the JSON Accept-MediaType to header
 		HttpHeaders requestHeaders = new HttpHeaders();
 		requestHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
-		requestHeaders.add("Authorization", token);
+		
+		if(!token.equals(null)) {
+			requestHeaders.add(HttpHeaders.AUTHORIZATION, token);
+		}else if(!basic.equals(null)) {
+			requestHeaders.add(HttpHeaders.AUTHORIZATION, basic);
+		}
 		
 		HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
 		httpRequestFactory.setConnectionRequestTimeout(properties.get("connectionTimeout"));
