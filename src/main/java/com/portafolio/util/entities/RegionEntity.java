@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
@@ -23,7 +22,6 @@ public class RegionEntity implements Serializable {
 	
 	@Id
 	@Column(name="ID_REGIÓN") 
-	@JsonIgnore
 	private Long id;
 	
 	@Column(name="REGION")

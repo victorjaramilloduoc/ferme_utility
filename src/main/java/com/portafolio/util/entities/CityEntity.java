@@ -9,8 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
 
 @Entity
@@ -24,7 +22,6 @@ public class CityEntity implements Serializable {
 	
 	@Id
 	@Column(name="ID_CIUDAD")
-	@JsonIgnore
 	private Long id;
 	
 	@Column(name="CIUDAD")
