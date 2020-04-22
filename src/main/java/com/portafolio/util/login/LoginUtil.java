@@ -25,7 +25,7 @@ public class LoginUtil {
 		Map<String, String> mapResponse;
 		Map<String, String> body = getCredentialsOfHeader(httpHeaders);
 
-		loginResponse = RestClientUtil.postToWs(loginUrl, null, null, body);
+		loginResponse = RestClientUtil.postToWs(loginUrl, null, null, body, "", "");
 
 		mapResponse = new Gson().fromJson(loginResponse.toString(), Map.class);
 
@@ -37,7 +37,7 @@ public class LoginUtil {
 		Map<String, String> headerMap = httpHeaders.toSingleValueMap();
 		String auth = headerMap.get(HttpHeaders.AUTHORIZATION.toLowerCase()).toString().replace("Basic", "").trim();
 		
-		String authorization = new String(Base64.getDecoder().decode(auth));
+		String authorization = decodeBase64(auth);
 
 		String[] credencials = authorization.split(":");
 		String user = credencials[0];
@@ -48,6 +48,16 @@ public class LoginUtil {
 		body.put("username", user);
 		body.put("password", pass);
 		return body;
+	}
+
+	private static String decodeBase64(String text) {
+		String response = new String(Base64.getDecoder().decode(text));
+		return response;
+	}
+	
+	private static String encodeBase64(String text) {
+		String response = new String(Base64.getDecoder().decode(text));
+		return response;
 	}
 
 }

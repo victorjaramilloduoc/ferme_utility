@@ -33,8 +33,7 @@ public class RestClientUtil {
 	 * @return JSONObject
 	 */
 	public static JSONObject getJsonFromWs(String wsUri, Map<String, String> uriPathParams,
-			Map<String, String> queryParams, String token, Map<String, Integer> properties,
-			String basic) {
+			Map<String, String> queryParams, String token, Map<String, Integer> properties) {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(wsUri);
 
@@ -58,8 +57,6 @@ public class RestClientUtil {
 		
 		if(!token.equals(null)) {
 			requestHeaders.add(HttpHeaders.AUTHORIZATION, token);
-		}else if(!basic.equals(null)) {
-			requestHeaders.add(HttpHeaders.AUTHORIZATION, basic);
 		}
 		
 		HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
@@ -191,7 +188,8 @@ public class RestClientUtil {
 		}
 	}
 	
-	public static Object postToWs(String wsUri, Map<String, String> uriPathParams, Map<String, String> queryParams, Object body) throws JSONException, Exception {
+	public static Object postToWs(String wsUri, Map<String, String> uriPathParams, Map<String, String> queryParams,
+			Object body, String token, String basic) throws JSONException, Exception {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(wsUri);
 
@@ -210,6 +208,12 @@ public class RestClientUtil {
 		// Add the JSON Accept-MediaType to header
 		HttpHeaders requestHeaders = new HttpHeaders();
 		requestHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		
+		if (token != null) {
+			requestHeaders.add("Authorization", token);
+		} else if(basic != null) {
+			requestHeaders.add("Basic", basic);
+		}
 
 		// Create a new RestTemplate instance
 		RestTemplate restTemplate = new RestTemplate();
