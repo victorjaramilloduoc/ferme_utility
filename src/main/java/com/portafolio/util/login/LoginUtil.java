@@ -50,14 +50,19 @@ public class LoginUtil {
 		return body;
 	}
 
-	private static String decodeBase64(String text) {
+	public static String decodeBase64(String text) {
 		String response = new String(Base64.getDecoder().decode(text));
 		return response;
 	}
 	
-	private static String encodeBase64(String text) {
-		String response = new String(Base64.getDecoder().decode(text));
+	public static String encodeBase64(String text) {
+		String response = new String(Base64.getEncoder().encode(text.getBytes()));
 		return response;
+	}
+	
+	public static String createBasicAuth(String username, String password) {
+		
+		return "Basic "+encodeBase64(username+":"+password);
 	}
 
 }

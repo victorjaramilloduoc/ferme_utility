@@ -212,7 +212,7 @@ public class RestClientUtil {
 		if (token != null) {
 			requestHeaders.add("Authorization", token);
 		} else if(basic != null) {
-			requestHeaders.add("Basic", basic);
+			requestHeaders.add("Authorization", basic);
 		}
 
 		// Create a new RestTemplate instance
