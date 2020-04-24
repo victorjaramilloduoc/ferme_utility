@@ -189,7 +189,7 @@ public class RestClientUtil {
 	}
 	
 	public static Object postToWs(String wsUri, Map<String, String> uriPathParams, Map<String, String> queryParams,
-			Object body, String token, String basic) throws JSONException, Exception {
+			Object body, String token, String basic) throws JSONException {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(wsUri);
 
@@ -224,7 +224,11 @@ public class RestClientUtil {
 
 		if (!response.getStatusCode().equals(HttpStatus.OK)) {
 			JSONObject error = new JSONObject(response.getBody());
-			throw new Exception(error.getString("message"));
+			try {
+				throw new Exception(error.getString("message"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
 		return response.getBody().trim();
