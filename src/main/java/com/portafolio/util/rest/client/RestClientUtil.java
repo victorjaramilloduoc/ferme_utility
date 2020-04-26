@@ -233,5 +233,54 @@ public class RestClientUtil {
 		
 		return response.getBody().trim();
 	}
+	
+	public static Object putToWs(String wsUri, Map<String, String> uriPathParams, Map<String, String> queryParams,
+			Object body, String token) throws JSONException {
+
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(wsUri);
+
+		if (queryParams != null && !queryParams.isEmpty()) {
+			// Set the query parameters
+			for (String queryParanName : queryParams.keySet()) {
+				builder.queryParam(queryParanName, queryParams.get(queryParanName));
+			}
+		}
+
+		URI finalWsUri = builder.build().toUri();
+		if (uriPathParams != null && !uriPathParams.isEmpty()) {
+			finalWsUri = builder.buildAndExpand(uriPathParams).toUri();
+		}
+
+		// Add the JSON Accept-MediaType to header
+		HttpHeaders requestHeaders = new HttpHeaders();
+		requestHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		
+		if (token != null) {
+			requestHeaders.add("Authorization", token);
+		} 
+
+		// Create a new RestTemplate instance
+		RestTemplate restTemplate = new RestTemplate();
+
+		// Make the HTTP GET request, marshaling the response to a String
+		ResponseEntity<String> response = null;
+		try {
+			response = restTemplate.exchange(finalWsUri, HttpMethod.PUT,
+					new HttpEntity<>(body, requestHeaders), String.class);
+			
+			if (!response.getStatusCode().equals(HttpStatus.OK)) {
+				JSONObject error = new JSONObject(response.getBody());
+				try {
+					throw new Exception(error.getString("message"));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		} catch (Exception e) {
+			return null;
+		}
+		
+		return response.getBody().trim();
+	}
 
 }
