@@ -13,8 +13,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.google.gson.annotations.SerializedName;
-
 import lombok.Data;
 
 @Entity
@@ -54,7 +52,6 @@ public class UserEntity implements Serializable {
 	private char genere;
 	
 	@Column(name="FECHA_NACIMIENTO_USUARIO")
-	@SerializedName("birth_date")
 	private Date birthDate;
 	
 	@Column(name="PASS_USUARIO")
