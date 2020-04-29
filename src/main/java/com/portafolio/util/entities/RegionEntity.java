@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.google.gson.annotations.SerializedName;
-
 import lombok.Data;
 
 @Entity
@@ -25,7 +23,6 @@ public class RegionEntity implements Serializable {
 	private Long id;
 	
 	@Column(name="REGION")
-	@SerializedName("region_name")
 	private String regionName;
 	
 }

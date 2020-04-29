@@ -234,8 +234,8 @@ public class RestClientUtil {
 		return response.getBody().trim();
 	}
 	
-	public static Object putToWs(String wsUri, Map<String, String> uriPathParams, Map<String, String> queryParams,
-			Object body, String token) throws JSONException {
+	public static Object postPutPatchDeleteToWs(String wsUri, Map<String, String> uriPathParams, Map<String, String> queryParams,
+			Object body, String token, HttpMethod method) throws JSONException {
 
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(wsUri);
 
@@ -265,7 +265,7 @@ public class RestClientUtil {
 		// Make the HTTP GET request, marshaling the response to a String
 		ResponseEntity<String> response = null;
 		try {
-			response = restTemplate.exchange(finalWsUri, HttpMethod.PUT,
+			response = restTemplate.exchange(finalWsUri, method,
 					new HttpEntity<>(body, requestHeaders), String.class);
 			
 			if (!response.getStatusCode().equals(HttpStatus.OK)) {
@@ -273,10 +273,11 @@ public class RestClientUtil {
 				try {
 					throw new Exception(error.getString("message"));
 				} catch (Exception e) {
-					e.printStackTrace();
+					System.err.println(e);
 				}
 			}
 		} catch (Exception e) {
+			System.err.println(e);
 			return null;
 		}
 		
