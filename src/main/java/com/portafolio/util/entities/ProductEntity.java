@@ -44,7 +44,7 @@ public class ProductEntity implements Serializable {
 	@Column(name = "ID_PROVEEDOR")
 	private Long supplierId;
 	
-	@Column(name = "HABILITADO")
-	private boolean isEnable;
+	@Column(name="HABILITADO")
+	private boolean enable;
 
 }
