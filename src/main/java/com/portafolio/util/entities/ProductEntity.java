@@ -50,7 +50,7 @@ public class ProductEntity implements Serializable {
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name ="ID_SUBFAMILIA_PRODUCTO", nullable = false)
-	private SubFamilyProductEntity subFamilyProduct;
+	private ProductSubFamilyEntity subFamilyProduct;
 	
 	@Column(name = "MARCA_PRODUCTO")
 	private String marcaProducto;

@@ -17,7 +17,7 @@ import lombok.Data;
 @Entity
 @Table(name="SUBFAMILIA_PRODUCTO")
 @Data
-public class SubFamilyProductEntity implements Serializable {
+public class ProductSubFamilyEntity implements Serializable {
 	/**
 	 * 
 	 */
