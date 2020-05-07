@@ -44,6 +44,12 @@ public class ProductEntity implements Serializable {
 	@Column(name = "ID_PROVEEDOR")
 	private Long supplierId;
 	
+	@Column(name = "ID_SUBFAMILIA_PRODUCTO")
+	private Long idSubFamily;
+	
+	@Column(name = "MARCA_PRODUCTO")
+	private String marcaProducto;
+	
 	@Column(name="HABILITADO")
 	private boolean enable;
 
