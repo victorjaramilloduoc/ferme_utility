@@ -1,4 +1,6 @@
+com/portafolio/util/entities/SupplierEntity.class
 com/portafolio/util/entities/LocationEntity.class
+com/portafolio/util/entities/HeadingEntity.class
 com/portafolio/util/exceptions/RestClientUtilException.class
 com/portafolio/util/entities/RegionEntity.class
 com/portafolio/util/rest/client/ResponseUtil.class

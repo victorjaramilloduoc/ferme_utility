@@ -47,6 +47,7 @@ public class SupplierEntity implements Serializable {
 	@JoinColumn(name ="ID_RUBRO", nullable = false)
 	private HeadingEntity heading;
 	
+	@Column(name = "CELULAR")
 	private Long phoneNumber;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
