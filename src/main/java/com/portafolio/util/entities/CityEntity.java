@@ -9,11 +9,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Immutable;
+
 import lombok.Data;
 
 @Entity
 @Table(name="CIUDAD")
 @Data
+@Immutable
 public class CityEntity implements Serializable {
 	/**
 	 * 
@@ -21,10 +24,10 @@ public class CityEntity implements Serializable {
 	private static final long serialVersionUID = 6350980852155943997L;
 	
 	@Id
-	@Column(name="ID_CIUDAD")
+	@Column(name="ID_CIUDAD", nullable = false, updatable = false)
 	private Long id;
 	
-	@Column(name="CIUDAD")
+	@Column(name="CIUDAD", nullable = false, updatable = false)
 	private String cityName;
 	
 	@ManyToOne
