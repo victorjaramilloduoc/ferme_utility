@@ -2,7 +2,6 @@ package com.portafolio.util.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -43,18 +42,18 @@ public class SupplierEntity implements Serializable {
 	@Column(name="RAZON_SOCIAL")
 	private String businessName;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name ="ID_RUBRO", nullable = false)
 	private HeadingEntity heading;
 	
 	@Column(name = "CELULAR")
 	private Long phoneNumber;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name ="ID_COMUNA", nullable = false)
 	private LocationEntity location;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name ="ID_USUARIO", nullable = false)
 	private UserEntity user;
 	

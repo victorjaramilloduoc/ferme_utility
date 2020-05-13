@@ -9,11 +9,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Immutable;
+
 import lombok.Data;
 
 @Entity
 @Table(name="FAMILIA_PRODUCTO")
 @Data
+@Immutable
 public class ProductFamilyEntity implements Serializable {
 	/**
 	 * 

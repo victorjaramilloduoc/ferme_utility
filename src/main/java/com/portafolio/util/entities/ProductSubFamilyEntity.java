@@ -2,7 +2,6 @@ package com.portafolio.util.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,11 +11,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Immutable;
+
 import lombok.Data;
 
 @Entity
 @Table(name="SUBFAMILIA_PRODUCTO")
 @Data
+@Immutable
 public class ProductSubFamilyEntity implements Serializable {
 	/**
 	 * 
@@ -32,7 +34,7 @@ public class ProductSubFamilyEntity implements Serializable {
 	@Column(name="SUBFAMILIA_PRODUCTO")
 	private String subFamilyProductName;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name ="ID_FAMILIA_PRODUCTO", nullable = false)
 	private ProductFamilyEntity productFamily;
 	
