@@ -45,11 +45,11 @@ public class ProductEntity implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_PROVEEDOR", nullable = false)
-	private SupplierEntity supplier;
+	private SupplierEntity supplier = new SupplierEntity();
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_SUBFAMILIA_PRODUCTO", nullable = false)
-	private ProductSubFamilyEntity subFamilyProduct;
+	private ProductSubFamilyEntity subFamilyProduct = new ProductSubFamilyEntity();
 	
 	@Column(name = "MARCA_PRODUCTO")
 	private String marcaProducto;
