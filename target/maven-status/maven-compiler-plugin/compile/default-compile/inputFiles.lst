@@ -1,4 +1,5 @@
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/ProductEntity.java
+/Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/UserRoleEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/HeadingEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/CityEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/RegionEntity.java
@@ -6,6 +7,7 @@
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/SupplierEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/exceptions/RestClientUtilException.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/LocationEntity.java
+/Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/RoleEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/ProductSubFamilyEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/UserEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/rest/client/ResponseUtil.java
