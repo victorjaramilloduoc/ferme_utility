@@ -44,18 +44,20 @@ public class SupplierEntity implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_RUBRO", nullable = false)
-	private HeadingEntity heading;
+	private HeadingEntity heading = new HeadingEntity();
 	
 	@Column(name = "CELULAR")
 	private Long phoneNumber;
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_COMUNA", nullable = false)
-	private LocationEntity location;
+	private LocationEntity location = new LocationEntity();
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_USUARIO", nullable = false)
-	private UserEntity user;
+	private UserEntity user = new UserEntity();
 	
+	@Column(name="HABILITADO")
+	private boolean enable;
 
 }
