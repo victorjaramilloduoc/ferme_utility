@@ -33,5 +33,5 @@ public class UserRoleEntity implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_ROL", nullable = false, updatable = false)
-	private RoleEntity role;
+	private RoleEntity role = new RoleEntity();
 }

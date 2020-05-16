@@ -52,7 +52,10 @@ public class ProductEntity implements Serializable {
 	private ProductSubFamilyEntity subFamilyProduct = new ProductSubFamilyEntity();
 	
 	@Column(name = "MARCA_PRODUCTO")
-	private String marcaProducto;
+	private String brandProduct;
+	
+	@Column(name = "IMAGEN_PRODUCTO")
+	private String productImage;
 	
 	@Column(name="HABILITADO")
 	private boolean enable;
