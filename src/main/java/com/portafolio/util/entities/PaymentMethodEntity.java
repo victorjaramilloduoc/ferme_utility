@@ -20,7 +20,7 @@ public class PaymentMethodEntity implements Serializable {
 	private static final long serialVersionUID = 7110654726467182626L;
 	
 	@Id
-	@Column(name="ID_VENTA", nullable = false, updatable = false)
+	@Column(name="ID_FORMA_PAGO", nullable = false, updatable = false)
 	private Long id;
 	
 	@Column(name="FORMA_PAGO")
