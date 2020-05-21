@@ -1,6 +1,7 @@
 package com.portafolio.util.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,30 +12,28 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Immutable;
-
 import lombok.Data;
 
 @Entity
-@Table(name="CIUDAD")
+@Table(name="DOCUMENTO")
 @Data
-@Immutable
-public class CityEntity implements Serializable {
+public class DocumentEntity implements Serializable {
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6350980852155943997L;
+	private static final long serialVersionUID = -4389098533963648608L;
 	
 	@Id
-	@Column(name="ID_CIUDAD", nullable = false, updatable = false)
+	@Column(name="ID_DOCUMENTO", nullable = false, updatable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name="CIUDAD", nullable = false, updatable = false)
-	private String cityName;
-	
 	@ManyToOne
-	@JoinColumn(name ="ID_REGION", nullable = false)
-	private RegionEntity region;
+	@JoinColumn(name ="ID_TIPO_DOCUMENTO", nullable = false)
+	private DocumentTypeEntity docuemntType;
+	
+	@Column(name="FECHA_DOCUMENTO")
+	private Date documentDate = new Date();
 
 }

@@ -1,6 +1,7 @@
 package com.portafolio.util.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,10 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Where;
+
 import lombok.Data;
 
 @Entity
 @Table(name="PRODUCTO")
+@Where(clause = "HABILITADO = 1")
 @Data
 public class ProductEntity implements Serializable {
 
@@ -59,5 +63,8 @@ public class ProductEntity implements Serializable {
 	
 	@Column(name="HABILITADO")
 	private boolean enable;
+	
+	@Column(name="FECHA_VENCIMIENTO")
+	private Date expirationDate;
 
 }
