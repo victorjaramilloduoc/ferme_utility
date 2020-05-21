@@ -1,6 +1,7 @@
 package com.portafolio.util.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -59,5 +60,8 @@ public class ProductEntity implements Serializable {
 	
 	@Column(name="HABILITADO")
 	private boolean enable;
+	
+	@Column(name="FECHA_VENCIMIENTO")
+	private Date expirationDate;
 
 }

@@ -2,8 +2,11 @@ package com.portafolio.util.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -22,14 +25,17 @@ public class ProductSaleEntity implements Serializable {
 	
 	@Id
 	@Column(name="ID_PRODUCTO_VENTA", nullable = false, updatable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_PRODUCTO", nullable = false)
 	private ProductEntity product;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name ="ID_VENTA", nullable = false)
 	private SaleEntity sale;
-
+	
+	@Column(name = "CANTIDAD")
+	private Long quantity;
 }
