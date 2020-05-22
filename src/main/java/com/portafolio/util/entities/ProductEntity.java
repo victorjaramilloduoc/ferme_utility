@@ -12,13 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Where;
-
 import lombok.Data;
 
 @Entity
 @Table(name="PRODUCTO")
-@Where(clause = "HABILITADO = 1")
 @Data
 public class ProductEntity implements Serializable {
 
