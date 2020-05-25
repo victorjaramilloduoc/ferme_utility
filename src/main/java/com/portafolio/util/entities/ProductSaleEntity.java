@@ -1,6 +1,7 @@
 package com.portafolio.util.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -28,9 +30,9 @@ public class ProductSaleEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne
-	@JoinColumn(name ="ID_PRODUCTO", nullable = false)
-	private ProductEntity product;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "id")
+//	@JoinColumn(name ="ID_PRODUCTO", nullable = false)
+	private List<ProductEntity> products;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name ="ID_VENTA", nullable = false)
