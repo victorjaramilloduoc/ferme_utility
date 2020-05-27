@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 
 @Entity
@@ -31,9 +33,11 @@ public class DocumentEntity implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_TIPO_DOCUMENTO", nullable = false)
-	private DocumentTypeEntity docuemntType;
+	@JsonProperty("document_type")
+	private DocumentTypeEntity documentType;
 	
 	@Column(name="FECHA_DOCUMENTO")
+	@JsonProperty("document_date")
 	private Date documentDate = new Date();
 
 }
