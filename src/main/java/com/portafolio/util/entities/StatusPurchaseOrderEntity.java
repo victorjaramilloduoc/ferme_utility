@@ -36,7 +36,7 @@ public class StatusPurchaseOrderEntity implements Serializable {
 	
 	@Column(name = "FECHA_ESTADO_ORDEN_COMPRA")
 	@JsonProperty("date_status_purchase_order")
-	private Date dateStatusPurchaseOrder;
+	private Date dateStatusPurchaseOrder = new Date();
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_ORDEN_COMPRA", nullable = false)

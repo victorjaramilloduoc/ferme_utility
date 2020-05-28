@@ -39,7 +39,7 @@ public class ReceptionEntity implements Serializable {
 	
 	@Column(name = "FECHA_RECEPCION")
 	@JsonProperty("reception_date")
-	private Date receptionDate;
+	private Date receptionDate = new Date();
 	
 	@Column(name = "OBSERVACIONES")
 	private String obsevations;
