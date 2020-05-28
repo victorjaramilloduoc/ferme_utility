@@ -9,10 +9,13 @@ com/portafolio/util/rest/client/RestClientUtil.class
 com/portafolio/util/entities/RoleEntity.class
 com/portafolio/util/entities/SaleEntity.class
 com/portafolio/util/entities/ProductSubFamilyEntity.class
+com/portafolio/util/entities/ReceptionEntity.class
 com/portafolio/util/entities/ProductEntity.class
 com/portafolio/util/entities/DocumentTypeEntity.class
 com/portafolio/util/entities/HeadingEntity.class
 com/portafolio/util/entities/DocumentEntity.class
+com/portafolio/util/entities/StatusPurchaseOrderEntity.class
+com/portafolio/util/entities/PurchaseOrderEntity.class
 com/portafolio/util/entities/PaymentMethodEntity.class
 com/portafolio/util/login/LoginUtil.class
 com/portafolio/util/entities/ProductFamilyEntity.class
