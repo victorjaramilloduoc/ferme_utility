@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.portafolio</groupId>
   <artifactId>utility</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.3-SNAPSHOT</version>
  
   <name>utility</name>
   <description>Este proyecto es un JAR utilitario</description>
@@ -63,9 +63,26 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.15.Final</version>
 		</dependency>				
-				
 	  	
   </dependencies>
+  
+  <repositories>
+    <repository>
+      <id>maven-group</id>
+      <url>http://localhost:8081/repository/maven-group/</url>
+    </repository>
+  </repositories>
+  
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://localhost:8081/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
   
   <build>
 		<plugins>
@@ -78,7 +95,8 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			
 		</plugins>
 	</build>
-  
+	
 </project>
