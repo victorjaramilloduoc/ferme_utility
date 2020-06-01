@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
@@ -30,6 +31,7 @@ public class DocumentTypeEntity implements Serializable {
 	
 	@Column(name="TIPO_DOCUMENTO")
 	@JsonProperty("document_type")
+	@SerializedName("document_type")
 	private String documentType;
 
 }

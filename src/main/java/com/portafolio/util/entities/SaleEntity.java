@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
@@ -36,6 +37,7 @@ public class SaleEntity implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name="ID_VENTA", referencedColumnName="ID_VENTA", nullable = false)
 	@JsonProperty("products_sale")
+	@SerializedName("products_sale")
 	private List<ProductSaleEntity> productsSale;
 	
 	@ManyToOne
@@ -49,6 +51,7 @@ public class SaleEntity implements Serializable {
 	@ManyToOne
 	@JoinColumn(name ="ID_FORMA_PAGO", nullable = false)
 	@JsonProperty("payment_method")
+	@SerializedName("payment_method")
 	private PaymentMethodEntity paymentMethod; 
 
 }
