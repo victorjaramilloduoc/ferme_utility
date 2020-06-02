@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
@@ -32,15 +33,18 @@ public class StatusPurchaseOrderEntity implements Serializable {
 	
 	@Column(name = "ESTADO_ORDEN_COMPRA")
 	@JsonProperty("status_purchase_order")
+	@SerializedName("status_purchase_order")
 	private String statusPurchaseOrder;
 	
 	@Column(name = "FECHA_ESTADO_ORDEN_COMPRA")
 	@JsonProperty("date_status_purchase_order")
+	@SerializedName("date_status_purchase_order")
 	private Date dateStatusPurchaseOrder = new Date();
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_ORDEN_COMPRA", nullable = false)
 	@JsonProperty("purchase_order")
+	@SerializedName("purchase_order")
 	private PurchaseOrderEntity purchaseOrder;
 
 }

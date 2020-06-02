@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
@@ -34,6 +35,7 @@ public class PurchaseOrderEntity implements Serializable {
 	
 	@Column(name = "FECHA_COMPRA")
 	@JsonProperty("date_purchase")
+	@SerializedName("date_purchase")
 	private Date datePurchase = new Date();
 	
 	@ManyToOne
