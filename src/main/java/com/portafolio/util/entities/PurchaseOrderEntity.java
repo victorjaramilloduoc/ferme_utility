@@ -40,7 +40,7 @@ public class PurchaseOrderEntity implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_USUARIO", nullable = false)
-	private UserEntity user;
+	private UserEntity user = new UserEntity();
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_RECEPCION", nullable = false)
@@ -49,5 +49,10 @@ public class PurchaseOrderEntity implements Serializable {
 	@ManyToOne
 	@JoinColumn(name ="ID_PRODUCTO", nullable = false)
 	private ProductEntity product;
+	
+	@Column(name = "CANTIDAD_PRODUCTO_OC")
+	@JsonProperty("product_quantity")
+	@SerializedName("product_quantity")
+	private Long productQuantity;
 
 }

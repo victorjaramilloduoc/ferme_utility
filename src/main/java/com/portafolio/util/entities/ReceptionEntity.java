@@ -37,7 +37,7 @@ public class ReceptionEntity implements Serializable {
 	@JoinColumn(name ="ID_USUARIO", nullable = false)
 	@JsonProperty("reception_user")
 	@SerializedName("reception_user")
-	private UserEntity receptionUser;
+	private UserEntity receptionUser = new UserEntity();
 	
 	@Column(name = "FECHA_RECEPCION")
 	@JsonProperty("reception_date")
