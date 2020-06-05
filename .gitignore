@@ -15,7 +15,7 @@
 log/
 target/
 
-*/target/**
+!**/target/**
 *.class
 *.jar
 *.war
