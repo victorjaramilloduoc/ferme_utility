@@ -3,6 +3,7 @@ package com.portafolio.util.entities;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -41,7 +42,7 @@ public class StatusPurchaseOrderEntity implements Serializable {
 	@SerializedName("date_status_purchase_order")
 	private Date dateStatusPurchaseOrder = new Date();
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name ="ID_ORDEN_COMPRA", nullable = false)
 	@JsonProperty("purchase_order")
 	@SerializedName("purchase_order")
