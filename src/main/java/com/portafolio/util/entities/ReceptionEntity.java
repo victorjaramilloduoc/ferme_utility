@@ -17,30 +17,34 @@ import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
+
 @Entity
-@Table(name="DOCUMENTO")
+@Table(name="RECEPCION")
 @Data
-public class DocumentEntity implements Serializable {
+public class ReceptionEntity implements Serializable {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4389098533963648608L;
+	private static final long serialVersionUID = -4982162414237545310L;
 	
 	@Id
-	@Column(name="ID_DOCUMENTO", nullable = false, updatable = false)
+	@Column(name = "ID_RECEPCION")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(name ="ID_TIPO_DOCUMENTO", nullable = false)
-	@JsonProperty("document_type")
-	@SerializedName("document_type")
-	private DocumentTypeEntity documentType;
+	@JoinColumn(name ="ID_USUARIO", nullable = false)
+	@JsonProperty("reception_user")
+	@SerializedName("reception_user")
+	private UserEntity receptionUser = new UserEntity();
 	
-	@Column(name="FECHA_DOCUMENTO")
-	@JsonProperty("document_date")
-	@SerializedName("document_date")
-	private Date documentDate = new Date();
+	@Column(name = "FECHA_RECEPCION")
+	@JsonProperty("reception_date")
+	@SerializedName("reception_date")
+	private Date receptionDate = new Date();
+	
+	@Column(name = "OBSERVACIONES")
+	private String obsevations;
 
 }

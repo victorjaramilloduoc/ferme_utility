@@ -2,7 +2,6 @@ package com.portafolio.util.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -31,10 +30,6 @@ public class ProductSaleEntity implements Serializable {
 	@ManyToOne
 	@JoinColumn(name ="ID_PRODUCTO", nullable = false)
 	private ProductEntity product;
-	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="ID_VENTA", nullable = false)
-	private SaleEntity sale;
 	
 	@Column(name = "CANTIDAD")
 	private Long quantity;

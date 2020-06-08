@@ -9,6 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.gson.annotations.SerializedName;
+
 import lombok.Data;
 
 @Entity
@@ -27,6 +30,8 @@ public class PaymentMethodEntity implements Serializable {
 	private Long id;
 	
 	@Column(name="FORMA_PAGO")
+	@JsonProperty("payment_method")
+	@SerializedName("payment_method")
 	private String paymentMethod;
 
 }

@@ -1,4 +1,5 @@
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/ProductEntity.java
+/Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/ReceptionEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/UserRoleEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/HeadingEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/CityEntity.java
@@ -11,10 +12,12 @@
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/RoleEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/ProductSubFamilyEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/ProductSaleEntity.java
+/Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/PurchaseOrderEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/UserEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/rest/client/ResponseUtil.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/ProductFamilyEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/DocumentEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/SaleEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/PaymentMethodEntity.java
+/Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/entities/StatusPurchaseOrderEntity.java
 /Users/victor/Documents/workspace/utility/src/main/java/com/portafolio/util/rest/client/RestClientUtil.java
