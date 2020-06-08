@@ -45,11 +45,11 @@ public class PurchaseOrderEntity implements Serializable {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name ="ID_RECEPCION", nullable = false)
-	private ReceptionEntity reception;
+	private ReceptionEntity reception = new ReceptionEntity();
 	
 	@ManyToOne
 	@JoinColumn(name ="ID_PRODUCTO", nullable = false)
-	private ProductEntity product;
+	private ProductEntity product = new ProductEntity();
 	
 	@Column(name = "CANTIDAD_PRODUCTO_OC")
 	@JsonProperty("product_quantity")
