@@ -46,6 +46,6 @@ public class StatusPurchaseOrderEntity implements Serializable {
 	@JoinColumn(name ="ID_ORDEN_COMPRA", nullable = false)
 	@JsonProperty("purchase_order")
 	@SerializedName("purchase_order")
-	private PurchaseOrderEntity purchaseOrder;
+	private PurchaseOrderEntity purchaseOrder = new PurchaseOrderEntity();
 
 }
