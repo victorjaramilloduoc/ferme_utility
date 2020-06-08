@@ -19,10 +19,10 @@ public class RegionEntity implements Serializable {
 	private static final long serialVersionUID = 2868380745983370952L;
 	
 	@Id
-	@Column(name="ID_REGIÓN") 
+	@Column(name="ID_REGIÓN", nullable = false, updatable = false) 
 	private Long id;
 	
-	@Column(name="REGION")
+	@Column(name="REGION", nullable = false, updatable = false)
 	private String regionName;
 	
 }

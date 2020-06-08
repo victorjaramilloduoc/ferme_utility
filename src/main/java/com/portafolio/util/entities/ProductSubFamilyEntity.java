@@ -16,25 +16,26 @@ import org.hibernate.annotations.Immutable;
 import lombok.Data;
 
 @Entity
-@Table(name="CIUDAD")
+@Table(name="SUBFAMILIA_PRODUCTO")
 @Data
 @Immutable
-public class CityEntity implements Serializable {
+public class ProductSubFamilyEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6350980852155943997L;
+	private static final long serialVersionUID = 5478310281193456657L;
+	
 	
 	@Id
-	@Column(name="ID_CIUDAD", nullable = false, updatable = false)
+	@Column(name="ID_SUBFAMILIA_PRODUCTO")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name="CIUDAD", nullable = false, updatable = false)
-	private String cityName;
+	@Column(name="SUBFAMILIA_PRODUCTO")
+	private String subFamilyProductName;
 	
 	@ManyToOne
-	@JoinColumn(name ="ID_REGION", nullable = false)
-	private RegionEntity region;
-
+	@JoinColumn(name ="ID_FAMILIA_PRODUCTO", nullable = false)
+	private ProductFamilyEntity productFamily;
+	
 }

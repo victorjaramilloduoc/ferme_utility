@@ -3,7 +3,6 @@ package com.portafolio.util.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -60,9 +59,9 @@ public class UserEntity implements Serializable {
 	@Column(name="DIRECCION")
 	private String address;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name ="ID_COMUNA", nullable = false)
-	private LocationEntity location;
+	@ManyToOne
+	@JoinColumn(name ="ID_COMUNA", nullable = false, updatable = false)
+	private LocationEntity location = new LocationEntity();
 	
 	@Column(name="HABILITADO")
 	private boolean enable;

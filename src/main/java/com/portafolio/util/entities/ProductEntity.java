@@ -1,12 +1,15 @@
 package com.portafolio.util.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -41,10 +44,24 @@ public class ProductEntity implements Serializable {
 	@Column(name = "STOCK")
 	private Long stock;
 	
-	@Column(name = "ID_PROVEEDOR")
-	private Long supplierId;
+	@ManyToOne
+	@JoinColumn(name ="ID_PROVEEDOR", nullable = false)
+	private SupplierEntity supplier = new SupplierEntity();
 	
-	@Column(name = "HABILITADO")
-	private boolean isEnable;
+	@ManyToOne
+	@JoinColumn(name ="ID_SUBFAMILIA_PRODUCTO", nullable = false)
+	private ProductSubFamilyEntity subFamilyProduct = new ProductSubFamilyEntity();
+	
+	@Column(name = "MARCA_PRODUCTO")
+	private String brandProduct;
+	
+	@Column(name = "IMAGEN_PRODUCTO")
+	private String productImage;
+	
+	@Column(name="HABILITADO")
+	private boolean enable;
+	
+	@Column(name="FECHA_VENCIMIENTO")
+	private Date expirationDate;
 
 }

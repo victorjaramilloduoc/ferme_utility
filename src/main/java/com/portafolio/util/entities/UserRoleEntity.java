@@ -11,30 +11,27 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Immutable;
-
 import lombok.Data;
 
 @Entity
-@Table(name="CIUDAD")
+@Table(name="USUARIO_ROL")
 @Data
-@Immutable
-public class CityEntity implements Serializable {
+public class UserRoleEntity implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 6350980852155943997L;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name="ID_CIUDAD", nullable = false, updatable = false)
+	@Column(name="ID_USUARIO_ROL", nullable = false, updatable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name="CIUDAD", nullable = false, updatable = false)
-	private String cityName;
+	@ManyToOne
+	@JoinColumn(name ="ID_USUARIO", nullable = false, updatable = false)
+	private UserEntity user = new UserEntity();
 	
 	@ManyToOne
-	@JoinColumn(name ="ID_REGION", nullable = false)
-	private RegionEntity region;
-
+	@JoinColumn(name ="ID_ROL", nullable = false, updatable = false)
+	private RoleEntity role = new RoleEntity();
 }
