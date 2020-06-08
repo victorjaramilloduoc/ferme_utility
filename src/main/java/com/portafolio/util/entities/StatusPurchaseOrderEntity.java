@@ -22,6 +22,7 @@ import lombok.Data;
 @Table(name="ESTADO_ORDEN_COMPRA")
 @Data
 public class StatusPurchaseOrderEntity implements Serializable {
+	
 	/**
 	 * 
 	 */
@@ -47,5 +48,4 @@ public class StatusPurchaseOrderEntity implements Serializable {
 	@JsonProperty("purchase_order")
 	@SerializedName("purchase_order")
 	private PurchaseOrderEntity purchaseOrder = new PurchaseOrderEntity();
-
 }
